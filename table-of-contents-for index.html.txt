@@ -1,0 +1,24 @@
+Table of contents
+
+1. Body & Container
+    2. Sticky header / .sticky-header
+        2.1. Logo / .logo
+        2.2. Navigation / .navbar
+        2.3. Navigation Button / .nav-btn
+    3. Hero Slider / .hero-slider-fade
+        3.1 Slider image / .slider-image
+            3.1.1 Slider content / .slider-content
+    4. Content owerview
+    5. Video slider / .video-slider-wrap
+        5.1. Video slider header / .video-slider-header
+        5.2  Video slider / .video-slider
+    6. Video block / .video-block
+        6.1. Image block
+        6.2. Text block
+    7. Image columns
+    8. Image slider / .image-slider-wrap
+        8.1. Heading and description text 
+        8.2. Image slider / image-slider
+    9. Contact form
+    10. Footer / .footer
+        10.1 Copyright section / .copyright

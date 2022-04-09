@@ -1,0 +1,492 @@
+/*------------------------------------------------------------------
+Table of contents
+
+    1. Sticky header / .sticky-header
+    2. Global styles
+        2.1 Button styles
+    3. Typography
+    4. Hero slider
+    5. Video slider
+    6. Video block
+    7. Image slider
+    8. Footer
+    9. Media queries
+
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+   1. Sticky header
+-------------------------------------------------------------------*/
+$global-font-family:    'Lato';
+$global-font-size:      16px;
+$font-size-small:       12px;
+$font-size-h1:          40px;
+$font-size-h2:          32px;
+$font-size-h3:          20px;
+
+
+$color-black:               #000000;
+$color-white:                #ffffff;
+$color-success:              #ff704b;
+$disclosure-text-color:      #ed7c06;
+
+$white-border:               2px solid #ffffff;
+
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    height: 75px;
+    background-color: $color-black;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+  }
+  
+  .logo {
+    padding: 0 10px;
+  }
+  
+  .navbar {
+    padding: 0 10px;
+  
+    ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+    }
+  
+    a {
+      text-decoration: none;
+      color: $color-white;
+      font-size: $font-size-small;
+      text-transform: uppercase;
+      display: block;
+      padding: 0 15px;
+  
+      &:hover {
+        color: $color-success;
+      }
+    }
+  }
+  
+  .footer a:hover {
+    color: $color-success;
+  }
+  
+  .nav-btn {
+    margin-left: auto;
+  }
+  
+  .user-btn-icon {
+    background: url('images/user-icon.png');
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+    display: inline-block;
+  }
+  
+  /*------------------------------------------------------------------
+     2. Global styles
+  -------------------------------------------------------------------*/
+  
+  body {
+    font-family: 'Lato';
+  }
+  
+  .margin-right-10 {
+    margin-right: 10px;
+  }
+  
+  .margin-bottom-40 {
+    margin-bottom: 40px;
+  }
+  
+  .padding-10 {
+    padding: 10px;
+  }
+  
+  .custom-wrap {
+    padding-right: 10px;
+    padding-left: 10px;
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /*--------------------------
+     2.1 Button styles
+  ----------------------------*/
+  
+  .btn {
+    color: $color-white;
+    cursor: pointer;
+    border-radius: 50px;
+  }
+  
+  .btn-primary {
+    background-color: $color-white;
+    padding: 15px 55px;
+    font-size: 18px;
+    color: $color-black;
+    text-transform: capitalize;
+  }
+  
+  .btn-primary-child {
+    background-color: $color-black;
+    padding: 15px 45px;
+    font-size: 18px;
+    color: $color-white;
+    margin-top: 10px;
+  }
+  
+  .btn-secondary {
+    background-color: transparent;
+    border: $white-border;
+    padding: 20px 60px;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  
+  .btn-success {
+    background-color: #ff704b;
+    padding: 11px 25px;
+    font-size: $font-size-small;
+    text-transform: uppercase;
+  
+    span {
+      vertical-align: middle;
+    }
+  }
+  
+  .btn-primary-child:hover, .btn-primary:hover {
+    background-color: #bdbdbd;
+    color: $color-white;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #ff704b;
+  }
+  
+  .btn-success:hover {
+    color: $color-black;
+  }
+  
+  /*------------------------------------------------------------------
+     3. Typography
+  -------------------------------------------------------------------*/
+  
+  h1, h2, h3 {
+    font-family: 'Lato';
+  }
+  
+  h1 {
+    font-size: $font-size-h1;
+    color: $color-white;
+    text-transform: capitalize;
+  }
+  
+  h2 {
+    font-size: $font-size-h2;
+    margin-bottom: 15px;
+  }
+  
+  h3 {
+    font-size: $font-size-h3;
+    color: $color-white;
+  }
+  
+  input[type="text"]:focus {
+    background-color: #e3fde4;
+  }
+  
+  /*------------------------------------------------------------------
+     4. Hero slider 
+  -------------------------------------------------------------------*/
+  
+  .slick-dotted.slick-slider {
+    margin-bottom: 40px;
+  }
+  
+  .slider-image {
+    height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  
+    &:nth-child(1) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/starwars-header.png");
+    }
+  
+    &:nth-child(2) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/lionking-header.png");
+    }
+  
+    &:nth-child(3) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/spiderman-header.png");
+    }
+  }
+  
+  .slider-content {
+    color: $color-white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .slick-slide img {
+    display: initial;
+  }
+  
+  .slick-dots {
+    bottom: 0px;
+  
+    li {
+      img:nth-child(1) {
+        display: block;
+      }
+  
+      &.slick-active img {
+        &:nth-child(2) {
+          display: block;
+        }
+  
+        &:nth-child(1) {
+          display: none;
+        }
+      }
+  
+      img:nth-child(2) {
+        display: none;
+      }
+  
+      margin: 0;
+    }
+  }
+  
+  /*------------------------------------------------------------------
+     5. Video slider
+  -------------------------------------------------------------------*/
+  
+  .video-slider {
+    padding-left: 160px;
+    padding-bottom: 30px;
+  }
+  
+  .video-slider-wrap .slick-slide, .image-slider-wrap .slick-slide {
+    margin-right: 20px;
+  }
+  
+  .video-slider-wrap {
+    background-color: $color-black;
+  }
+  
+  .video-slider-header {
+    color: $color-white;
+    text-align: left;
+    padding: 35px 160px;
+  
+    h2 {
+      margin: 0;
+      display: inline-block;
+    }
+  
+    button {
+      float: right;
+    }
+  }
+  
+  .arrow {
+    height: 12px;
+    width: 30px;
+    display: inline-block;
+  }
+  
+  .arrow-right-black {
+    background: url('images/arrow-right-black.png') no-repeat;
+    background-position: right;
+    background-repeat: no-repeat;
+  }
+  
+  .arrow-right-white {
+    background: url('images/arrow-right-white.png') no-repeat;
+    background-position: right;
+  }
+  
+  .video-slider p {
+    color: white;
+    text-align: left;
+    font-size: $global-font-size;
+    margin-top: 10px;
+  }
+  
+  /*------------------------------------------------------------------
+     6. Video block
+  -------------------------------------------------------------------*/
+  
+  .grid-x.video-block {
+    display: table;
+  }
+  
+  .vertical-middle {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  .vb-padding {
+    padding: 0 95px;
+  }
+  
+  /*------------------------------------------------------------------
+     7. Image slider
+  -------------------------------------------------------------------*/
+  
+  .image-slider-wrap {
+    .slick-arrow {
+      z-index: 1;
+    }
+  
+    .slick-prev {
+      left: 20px;
+    }
+  
+    .slick-next {
+      right: 20px;
+    }
+  
+    .slick-prev:before {
+      font-size: 45px;
+      color: #ff704b;
+    }
+  }
+  
+  .slick-next:before {
+    font-size: 45px;
+    color: #ff704b;
+  }
+  
+  .image-slider-wrap .slick-prev, .slick-next {
+    width: 60px;
+    height: 100px;
+  }
+  
+  /*------------------------------------------------------------------
+     8. Footer
+  -------------------------------------------------------------------*/
+  
+  .footer {
+    background: $color-black;
+    height: 320px;
+    padding-top: 70px;
+  
+    li {
+      list-style: none;
+    }
+  
+    ul {
+      margin-left: 0;
+    }
+  
+    a {
+      text-decoration: none;
+      color: $color-white;
+      font-size: 14px;
+    }
+  
+    .social {
+      margin-top: 20px;
+    }
+  }
+  
+  .copyright {
+    background: $color-white;
+    padding: 20px;
+  
+    p {
+      margin: 0;
+      color: #666666;
+    }
+  }
+  
+  /*------------------------------------------------------------------
+     9. Media queries
+  -------------------------------------------------------------------*/
+  
+  /* Small only 639px*/
+  
+  @media screen and (max-width: 39.9375em) {
+    .video-slider-wrap {
+      padding: 0;
+  
+      .btn {
+        display: none;
+      }
+    }
+  
+    .vertical-middle {
+      display: block;
+    }
+  }
+  
+  /* Custom 908px */
+  
+  @media screen and (max-width: 56.75em) {
+    .navbar {
+      display: none;
+    }
+  
+    .vertical-middle {
+      text-align: center;
+    }
+  
+    .vb-padding {
+      padding: 30px;
+    }
+  
+    .video-slider {
+      padding-left: 30px;
+    }
+  
+    .video-slider-header {
+      color: $color-white;
+      text-align: center;
+      padding: 35px 35px;
+    }
+  
+    .btn-success {
+      display: none;
+    }
+  
+    .sticky-header {
+      display: block;
+      padding-top: 15px;
+    }
+  
+    .footer {
+      height: 100%;
+      text-align: center;
+    }
+  }
+  
+  /* Medium only 640px 1023px*/
+  
+  @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    .navbar a {
+      font-size: 10px;
+    }
+  
+    .btn-success {
+      padding: 11px 11px;
+      font-size: 11px;
+    }
+  
+    .large-6.medium-12.vertical-middle {
+      display: block;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
